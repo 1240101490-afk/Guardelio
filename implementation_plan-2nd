@@ -1,0 +1,82 @@
+# Implementation Plan — Fix Scenario Loading & Complete Malware Infection Response Scenarios
+
+Resolve the scenario loading error (*“Scenario 'Worm Spreading Through Hospital Network' has no active steps. Contact an administrator.”*), repair data integrity across the scenario database, fix the missing scenario overview bug, and ensure all 5 Malware Infection Response scenarios are fully playable end-to-end.
+
+---
+
+## Root Cause Analysis
+
+1. **Missing Step & Option Records for Scenarios 2–5**:
+   - In `seed_guardelio.py`, only `S-MAL-01` (*Ransomware Outbreak at Nexus Financial*) was seeded with `ScenarioStep`, `DecisionOption`, and `LearningObjective` records.
+   - `S-MAL-02` (*Trojan Horse in the Supply Chain*), `S-MAL-03` (*Worm Spreading Through Hospital Network*), `S-MAL-04` (*Cryptominer on University Servers*), and `S-MAL-05` (*Spyware in the Executive Suite*) were created only as metadata stubs in the `Scenario` table with 0 simulation steps.
+   - When a student attempts to start a simulation for `S-MAL-03` (or 02, 04, 05), `simulation_service.start_simulation` checks `first_step = ScenarioStep.objects.filter(scenario=scenario, is_active=True).first()`. Finding 0 steps, it throws:
+     `ValueError: Scenario "Worm Spreading Through Hospital Network" has no active steps. Contact an administrator.`
+   - `ScenarioOverviewPage.jsx` catches this error on start (or display) and renders the error banner: `Scenario Overview Error`.
+
+2. **Missing `overview` in `ScenarioListSerializer`**:
+   - `CategoryDetailPage.jsx` renders `{scenario.overview || 'No overview available.'}` on scenario cards.
+   - However, `ScenarioListSerializer` in `backend/apps/scenarios/serializers.py` omitted `'overview'` from its `Meta.fields` list.
+   - As a result, all scenario cards on Category Detail pages showed *"No overview available."* even though full overview text was present in the database.
+
+3. **Category Name Consistency**:
+   - The database category name was previously altered to `"Malware Infection Response - Updated"`. It will be cleanly normalized to `"Malware Infection Response"`.
+
+---
+
+## User Review Required
+
+> [!NOTE]
+> All changes maintain backward compatibility. The existing fully-playable scenario **S-MAL-01 (Ransomware Outbreak at Nexus Financial)** will remain 100% intact and functional with no data loss or breaking changes.
+
+---
+
+## Proposed Changes
+
+### Backend — Scenarios & Data Layer
+
+#### [MODIFY] [serializers.py](file:///c:/Users/Ahsan/OneDrive/Desktop/Final-Year-Project/backend/apps/scenarios/serializers.py)
+- Add `'overview'` to `ScenarioListSerializer.Meta.fields` so scenario cards on the category detail page correctly display the scenario overview instead of falling back to *"No overview available."*
+
+#### [MODIFY] [seed_guardelio.py](file:///c:/Users/Ahsan/OneDrive/Desktop/Final-Year-Project/backend/apps/scenarios/management/commands/seed_guardelio.py)
+- Add complete, high-quality, NIST SP 800-61 aligned seed data for all 5 Malware Infection Response scenarios:
+  1. **S-MAL-01** (Beginner, 5 steps, 3 decisions): Ransomware Outbreak at Nexus Financial *(Preserved & verified)*
+  2. **S-MAL-02** (Intermediate, 6 steps, 4 decisions): Trojan Horse in the Supply Chain *(Full content added)*
+  3. **S-MAL-03** (Advanced, 7 steps, 5 decisions): Worm Spreading Through Hospital Network *(Full content added)*
+  4. **S-MAL-04** (Beginner, 5 steps, 3 decisions): Cryptominer on University Servers *(Full content added)*
+  5. **S-MAL-05** (Intermediate, 6 steps, 4 decisions): Spyware in the Executive Suite *(Full content added)*
+- Each scenario will have:
+  - Full `LearningObjective` records (3–4 per scenario)
+  - Properly numbered `ScenarioStep` records with NIST phases (`preparation`, `detection`, `containment`, `eradication`, `recovery`, `post_incident`)
+  - Plausible `DecisionOption` records (2–4 per decision step) with `xp_awarded`, standardized `feedback_text`, and `consequence_type` (`positive`, `negative`, `neutral`)
+  - Correct `is_final_step` flags on post-incident steps
+- Update `_seed_scenarios()` and `_seed_full_scenario()` to seed all 5 scenarios idempotently using `get_or_create` and updates (no duplicates).
+
+---
+
+## Verification Plan
+
+### Automated Verification via Django Shell & Test Scripts
+1. **Database Integrity Audit**:
+   - Verify all 5 Malware scenarios exist, are active, and have the correct step counts:
+     - S-MAL-01: 5 steps, 3 objectives, 3 decision steps
+     - S-MAL-02: 6 steps, 3 objectives, 4 decision steps
+     - S-MAL-03: 7 steps, 4 objectives, 5 decision steps
+     - S-MAL-04: 5 steps, 3 objectives, 3 decision steps
+     - S-MAL-05: 6 steps, 3 objectives, 4 decision steps
+   - Verify every step is sequentially ordered (step 1 to N).
+   - Verify every decision step has between 2 and 4 options, exactly 1 correct option (`is_correct=True`), and valid `consequence_type`.
+   - Verify no broken `next_step` foreign keys.
+
+2. **API Endpoint Testing**:
+   - `GET /api/v1/categories/malware-infection-response/` -> Verify scenario cards contain valid `overview` strings (no missing overview).
+   - `GET /api/v1/scenarios/<id>/` -> Verify all 5 scenarios return full details, learning objectives, and `nist_phases_in_scenario`.
+   - `POST /api/v1/simulations/start/` -> Verify starting a simulation succeeds for each of the 5 scenarios.
+
+3. **Full Simulation Simulation (Core Engine Test)**:
+   - Run simulated play-throughs for each of the 5 scenarios:
+     - Start simulation -> Retrieve initial step
+     - Submit decision option -> Verify feedback payload, XP awarding, and next step transition
+     - Complete final step -> Verify session completion, completion bonus XP, perfect score bonus XP, badges check, and session results payload.
+
+4. **Frontend Verification**:
+   - Verify `CategoryDetailPage`, `ScenarioOverviewPage`, `SimulationPage`, and `SimulationResultPage` render cleanly without errors.

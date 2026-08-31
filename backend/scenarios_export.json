@@ -1,0 +1,859 @@
+[
+{
+  "model": "scenarios.category",
+  "pk": 1,
+  "fields": {
+    "name": "Malware Infection Response - Updated",
+    "slug": "malware-infection-response",
+    "description": "Malware incidents are among the most common cybersecurity threats faced by organisations today. In this category, you will practise the NIST Incident Response framework as applied to ransomware, trojans, worms, and spyware outbreaks. Each scenario puts you in the role of an analyst responding to a live infection.",
+    "short_summary": "Detect, contain, and eradicate malware from compromised systems.",
+    "icon_name": "virus",
+    "color_theme": "red",
+    "display_order": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.505Z",
+    "updated_at": "2026-07-25T10:18:33.591Z"
+  }
+},
+{
+  "model": "scenarios.category",
+  "pk": 2,
+  "fields": {
+    "name": "Phishing & Social Engineering",
+    "slug": "phishing-social-engineering",
+    "description": "Phishing remains the top initial access vector in security breaches worldwide. Practise identifying malicious emails, investigating credential theft, responding to spear-phishing campaigns, and educating end-users — all within realistic simulations.",
+    "short_summary": "Identify, investigate, and mitigate phishing attacks and social engineering attempts.",
+    "icon_name": "fish",
+    "color_theme": "amber",
+    "display_order": 2,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.509Z",
+    "updated_at": "2026-07-24T18:32:29.509Z"
+  }
+},
+{
+  "model": "scenarios.category",
+  "pk": 3,
+  "fields": {
+    "name": "DDoS & Network Disruption",
+    "slug": "ddos-network-disruption",
+    "description": "Distributed Denial of Service attacks threaten service availability and can be combined with other attack vectors. In this category you will respond to volumetric, protocol, and application-layer attacks — making triage, traffic scrubbing, and ISP escalation decisions.",
+    "short_summary": "Respond to volumetric attacks, scrub traffic, and restore service availability.",
+    "icon_name": "wifi-off",
+    "color_theme": "blue",
+    "display_order": 3,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.511Z",
+    "updated_at": "2026-07-24T18:32:29.511Z"
+  }
+},
+{
+  "model": "scenarios.category",
+  "pk": 4,
+  "fields": {
+    "name": "Data Breach & Exfiltration",
+    "slug": "data-breach-exfiltration",
+    "description": "Data breaches can expose sensitive customer records, intellectual property, and regulated data. These scenarios develop your skills in breach investigation, forensic log analysis, regulatory notification timelines (GDPR, HIPAA), and post-breach remediation.",
+    "short_summary": "Investigate data theft, contain the breach, and manage stakeholder communication.",
+    "icon_name": "database",
+    "color_theme": "purple",
+    "display_order": 4,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.514Z",
+    "updated_at": "2026-07-24T18:32:29.514Z"
+  }
+},
+{
+  "model": "scenarios.category",
+  "pk": 5,
+  "fields": {
+    "name": "Insider Threat Detection",
+    "slug": "insider-threat-detection",
+    "description": "Insider threats — whether malicious, negligent, or compromised — are among the hardest incidents to detect. These simulations train you to analyse audit logs, investigate suspicious behaviour, and navigate the legal and HR implications of insider threat investigations.",
+    "short_summary": "Detect malicious insiders, investigate anomalous access, and protect privileged data.",
+    "icon_name": "user-x",
+    "color_theme": "orange",
+    "display_order": 5,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.516Z",
+    "updated_at": "2026-07-24T18:32:29.516Z"
+  }
+},
+{
+  "model": "scenarios.category",
+  "pk": 6,
+  "fields": {
+    "name": "Network Intrusion & APT",
+    "slug": "network-intrusion-apt",
+    "description": "Advanced Persistent Threat actors are sophisticated, patient, and goal-oriented. These scenarios simulate APT campaigns where you must hunt for indicators of compromise, trace lateral movement, analyse command-and-control traffic, and execute eviction procedures.",
+    "short_summary": "Hunt advanced persistent threats, analyse lateral movement, and evict intruders.",
+    "icon_name": "shield-alert",
+    "color_theme": "emerald",
+    "display_order": 6,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.519Z",
+    "updated_at": "2026-07-24T18:32:29.519Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 1,
+  "fields": {
+    "scenario_id": "S-MAL-01",
+    "category": 1,
+    "title": "Ransomware Outbreak at Nexus Financial",
+    "slug": "ransomware-outbreak-at-nexus-financial",
+    "student_role": "Junior Security Analyst at Nexus Financial Services",
+    "overview": "A Monday morning alert: finance workstations encrypted by ransomware. Apply NIST IR to contain and recover.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 20,
+    "xp_completion_bonus": 30,
+    "xp_perfect_score_bonus": 40,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.521Z",
+    "updated_at": "2026-07-25T10:22:11.204Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 2,
+  "fields": {
+    "scenario_id": "S-MAL-02",
+    "category": 1,
+    "title": "Trojan Horse in the Supply Chain",
+    "slug": "trojan-horse-in-the-supply-chain",
+    "student_role": "Threat Intelligence Analyst at GlobalTech Manufacturing",
+    "overview": "A vendor software update delivered a trojan communicating with an external C2 server. Investigate and contain.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.523Z",
+    "updated_at": "2026-07-24T18:32:29.523Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 3,
+  "fields": {
+    "scenario_id": "S-MAL-03",
+    "category": 1,
+    "title": "Worm Spreading Through Hospital Network",
+    "slug": "worm-spreading-through-hospital-network",
+    "student_role": "Senior Incident Responder at City General Hospital",
+    "overview": "A self-propagating worm entered through an unpatched medical device, threatening clinical systems.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 30,
+    "xp_completion_bonus": 40,
+    "xp_perfect_score_bonus": 50,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.532Z",
+    "updated_at": "2026-07-24T18:32:29.532Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 4,
+  "fields": {
+    "scenario_id": "S-MAL-04",
+    "category": 1,
+    "title": "Cryptominer on University Servers",
+    "slug": "cryptominer-on-university-servers",
+    "student_role": "IT Security Intern at Westfield University",
+    "overview": "Unusually high CPU usage reveals a cryptomining script deployed through a compromised admin account.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.533Z",
+    "updated_at": "2026-07-24T18:32:29.533Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 5,
+  "fields": {
+    "scenario_id": "S-MAL-05",
+    "category": 1,
+    "title": "Spyware in the Executive Suite",
+    "slug": "spyware-in-the-executive-suite",
+    "student_role": "CISO Office Analyst at Meridian Consulting Group",
+    "overview": "A targeted spyware infection on the CEO workstation may have exfiltrated board communications.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.535Z",
+    "updated_at": "2026-07-24T18:32:29.535Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 6,
+  "fields": {
+    "scenario_id": "S-PHI-01",
+    "category": 2,
+    "title": "CEO Fraud Email at City Council",
+    "slug": "ceo-fraud-email-at-city-council",
+    "student_role": "IT Support Analyst at City Metropolitan Council",
+    "overview": "An accounts payable employee almost approved a fraudulent wire transfer from a spoofed CEO email.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.537Z",
+    "updated_at": "2026-07-24T18:32:29.537Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 7,
+  "fields": {
+    "scenario_id": "S-PHI-02",
+    "category": 2,
+    "title": "Spear-Phishing Campaign Targeting HR",
+    "slug": "spear-phishing-campaign-targeting-hr",
+    "student_role": "Security Operations Analyst at Atlas Insurance Group",
+    "overview": "A coordinated spear-phishing campaign uses weaponised PDFs to harvest HR staff credentials.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.538Z",
+    "updated_at": "2026-07-24T18:32:29.538Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 8,
+  "fields": {
+    "scenario_id": "S-PHI-03",
+    "category": 2,
+    "title": "Vishing Attack on Service Desk",
+    "slug": "vishing-attack-on-service-desk",
+    "student_role": "Service Desk Lead at Northern Rail Operations",
+    "overview": "A caller posing as an IT technician convinced an agent to reset a senior engineer VPN account.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.539Z",
+    "updated_at": "2026-07-24T18:32:29.539Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 9,
+  "fields": {
+    "scenario_id": "S-PHI-04",
+    "category": 2,
+    "title": "Business Email Compromise at Law Firm",
+    "slug": "business-email-compromise-at-law-firm",
+    "student_role": "Digital Forensics Analyst at Crowe & Partners Law Firm",
+    "overview": "A silently compromised email account enabled attackers to intercept a £2.4M real estate wire transfer.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 35,
+    "xp_completion_bonus": 45,
+    "xp_perfect_score_bonus": 55,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.541Z",
+    "updated_at": "2026-07-24T18:32:29.541Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 10,
+  "fields": {
+    "scenario_id": "S-PHI-05",
+    "category": 2,
+    "title": "Pretexting Attack on Data Centre Staff",
+    "slug": "pretexting-attack-on-data-centre-staff",
+    "student_role": "Physical Security Coordinator at DataVault Hosting",
+    "overview": "An attacker posing as a vendor engineer used a fabricated work order to gain physical data centre access.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 20,
+    "xp_completion_bonus": 30,
+    "xp_perfect_score_bonus": 40,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.544Z",
+    "updated_at": "2026-07-24T18:32:29.544Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 11,
+  "fields": {
+    "scenario_id": "S-DDS-01",
+    "category": 3,
+    "title": "Volumetric DDoS on E-Commerce Platform",
+    "slug": "volumetric-ddos-on-e-commerce-platform",
+    "student_role": "NOC Analyst at ShopFront Retail Technologies",
+    "overview": "Black Friday traffic spikes to 50Gbps. Distinguish DDoS traffic from legitimate load and respond.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.546Z",
+    "updated_at": "2026-07-24T18:32:29.546Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 12,
+  "fields": {
+    "scenario_id": "S-DDS-02",
+    "category": 3,
+    "title": "DNS Amplification Attack on ISP",
+    "slug": "dns-amplification-attack-on-isp",
+    "student_role": "Network Security Engineer at FastNet Internet Services",
+    "overview": "Open DNS resolvers abused to amplify attack traffic against an enterprise customer.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.548Z",
+    "updated_at": "2026-07-24T18:32:29.548Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 13,
+  "fields": {
+    "scenario_id": "S-DDS-03",
+    "category": 3,
+    "title": "Application-Layer Attack on Banking Portal",
+    "slug": "application-layer-attack-on-banking-portal",
+    "student_role": "Incident Commander at NovaBanque Digital Services",
+    "overview": "Low-and-slow HTTP requests exhaust connection pools without triggering volumetric thresholds.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 30,
+    "xp_completion_bonus": 40,
+    "xp_perfect_score_bonus": 50,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.550Z",
+    "updated_at": "2026-07-24T18:32:29.550Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 14,
+  "fields": {
+    "scenario_id": "S-DDS-04",
+    "category": 3,
+    "title": "SYN Flood on Government Portal",
+    "slug": "syn-flood-on-government-portal",
+    "student_role": "Junior Network Analyst at National Revenue Agency",
+    "overview": "A SYN flood during tax filing deadline prevents citizens from submitting returns.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.552Z",
+    "updated_at": "2026-07-24T18:32:29.552Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 15,
+  "fields": {
+    "scenario_id": "S-DDS-05",
+    "category": 3,
+    "title": "Multi-Vector DDoS with Extortion",
+    "slug": "multi-vector-ddos-with-extortion",
+    "student_role": "Security Operations Lead at Apex Gaming Network",
+    "overview": "Combined volumetric and application-layer DDoS with simultaneous Bitcoin extortion demand.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 35,
+    "xp_completion_bonus": 45,
+    "xp_perfect_score_bonus": 55,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.554Z",
+    "updated_at": "2026-07-24T18:32:29.554Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 16,
+  "fields": {
+    "scenario_id": "S-DAT-01",
+    "category": 4,
+    "title": "Customer Database via Misconfigured S3 Bucket",
+    "slug": "customer-database-via-misconfigured-s3-bucket",
+    "student_role": "Cloud Security Analyst at TrendShop E-Commerce",
+    "overview": "A researcher reports a publicly accessible S3 bucket containing 2 million customer records.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 20,
+    "xp_completion_bonus": 30,
+    "xp_perfect_score_bonus": 40,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.556Z",
+    "updated_at": "2026-07-24T18:32:29.556Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 17,
+  "fields": {
+    "scenario_id": "S-DAT-02",
+    "category": 4,
+    "title": "SQL Injection Breach on Healthcare Portal",
+    "slug": "sql-injection-breach-on-healthcare-portal",
+    "student_role": "Application Security Analyst at MedConnect Health Services",
+    "overview": "SQL injection in the patient portal extracted medical records for 50,000 patients.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.558Z",
+    "updated_at": "2026-07-24T18:32:29.558Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 18,
+  "fields": {
+    "scenario_id": "S-DAT-03",
+    "category": 4,
+    "title": "Insider Data Theft Before Resignation",
+    "slug": "insider-data-theft-before-resignation",
+    "student_role": "Digital Forensics Lead at Quantum Research Institute",
+    "overview": "DLP alerts show mass data transfer to personal cloud storage by a researcher on gardening leave.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 30,
+    "xp_completion_bonus": 40,
+    "xp_perfect_score_bonus": 50,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.561Z",
+    "updated_at": "2026-07-24T18:32:29.561Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 19,
+  "fields": {
+    "scenario_id": "S-DAT-04",
+    "category": 4,
+    "title": "Third-Party Vendor Breach Affecting You",
+    "slug": "third-party-vendor-breach-affecting-you",
+    "student_role": "TPRM Analyst at Allied Financial Group",
+    "overview": "Your payroll vendor suffered a breach; 12 months of employee data may be compromised.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.563Z",
+    "updated_at": "2026-07-24T18:32:29.563Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 20,
+  "fields": {
+    "scenario_id": "S-DAT-05",
+    "category": 4,
+    "title": "GDPR Breach Notification Under 72 Hours",
+    "slug": "gdpr-breach-notification-under-72-hours",
+    "student_role": "Data Protection Officer at EuroPost Logistics",
+    "overview": "A stolen laptop with unencrypted customer data requires GDPR Article 33 ICO notification within 72 hours.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 30,
+    "xp_completion_bonus": 40,
+    "xp_perfect_score_bonus": 50,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.565Z",
+    "updated_at": "2026-07-24T18:32:29.565Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 21,
+  "fields": {
+    "scenario_id": "S-INS-01",
+    "category": 5,
+    "title": "Disgruntled Employee Sabotaging Systems",
+    "slug": "disgruntled-employee-sabotaging-systems",
+    "student_role": "SOC Analyst at Omega Logistics",
+    "overview": "A terminated employee with unrevoked badge access deleted files on the night of termination.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.567Z",
+    "updated_at": "2026-07-24T18:32:29.567Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 22,
+  "fields": {
+    "scenario_id": "S-INS-02",
+    "category": 5,
+    "title": "Privileged Account Abuse by System Admin",
+    "slug": "privileged-account-abuse-by-system-admin",
+    "student_role": "Insider Threat Analyst at SecureBank UK",
+    "overview": "A sysadmin querying customer account databases outside business hours has been flagged by anomaly detection.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.570Z",
+    "updated_at": "2026-07-24T18:32:29.570Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 23,
+  "fields": {
+    "scenario_id": "S-INS-03",
+    "category": 5,
+    "title": "Contractor Selling Access to Dark Web",
+    "slug": "contractor-selling-access-to-dark-web",
+    "student_role": "Threat Hunter at Nexus Defence Technologies",
+    "overview": "Threat intelligence shows VPN credentials for a defence contractor on sale on a dark web forum.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 30,
+    "xp_completion_bonus": 40,
+    "xp_perfect_score_bonus": 50,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.572Z",
+    "updated_at": "2026-07-24T18:32:29.572Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 24,
+  "fields": {
+    "scenario_id": "S-INS-04",
+    "category": 5,
+    "title": "Accidental Data Leak by Negligent Employee",
+    "slug": "accidental-data-leak-by-negligent-employee",
+    "student_role": "Information Security Advisor at Citywide Legal Services",
+    "overview": "An employee emailed client billing records to the wrong distribution list including external recipients.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.574Z",
+    "updated_at": "2026-07-24T18:32:29.574Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 25,
+  "fields": {
+    "scenario_id": "S-INS-05",
+    "category": 5,
+    "title": "Nation-State Recruitment of Employee",
+    "slug": "nation-state-recruitment-of-employee",
+    "student_role": "Counterintelligence Liaison at GlobalAerospace Corp",
+    "overview": "An employee who attended a foreign embassy event has since significantly changed data access patterns.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 35,
+    "xp_completion_bonus": 45,
+    "xp_perfect_score_bonus": 55,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.576Z",
+    "updated_at": "2026-07-24T18:32:29.576Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 26,
+  "fields": {
+    "scenario_id": "S-APT-01",
+    "category": 6,
+    "title": "Lateral Movement Detected in Corporate Network",
+    "slug": "lateral-movement-detected-in-corporate-network",
+    "student_role": "Junior Threat Hunter at DataBridge Consulting",
+    "overview": "An EDR alert fired on a workstation performing unusual network scans across 3 compromised machines.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 20,
+    "xp_completion_bonus": 30,
+    "xp_perfect_score_bonus": 40,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.578Z",
+    "updated_at": "2026-07-24T18:32:29.578Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 27,
+  "fields": {
+    "scenario_id": "S-APT-02",
+    "category": 6,
+    "title": "C2 Beaconing to Suspicious Domain",
+    "slug": "c2-beaconing-to-suspicious-domain",
+    "student_role": "SOC Tier 2 Analyst at Meridian Telecom",
+    "overview": "DNS logs show regular beaconing to a DGA-like domain; a workstation is communicating with an attacker C2 server.",
+    "difficulty": "intermediate",
+    "estimated_duration_minutes": 25,
+    "xp_completion_bonus": 35,
+    "xp_perfect_score_bonus": 45,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.580Z",
+    "updated_at": "2026-07-24T18:32:29.580Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 28,
+  "fields": {
+    "scenario_id": "S-APT-03",
+    "category": 6,
+    "title": "Nation-State APT Campaign Against Energy Sector",
+    "slug": "nation-state-apt-campaign-against-energy-sector",
+    "student_role": "Senior Threat Intelligence Analyst at NationalGrid Cyber Defence",
+    "overview": "CISA advisory warns of APT activity in energy infrastructure; your SIEM flags matching indicators.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 40,
+    "xp_completion_bonus": 50,
+    "xp_perfect_score_bonus": 60,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.581Z",
+    "updated_at": "2026-07-24T18:32:29.581Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 29,
+  "fields": {
+    "scenario_id": "S-APT-04",
+    "category": 6,
+    "title": "Credential Stuffing on VPN Gateway",
+    "slug": "credential-stuffing-on-vpn-gateway",
+    "student_role": "Identity Security Analyst at Apex Pharmaceuticals",
+    "overview": "Thousands of failed VPN login attempts; several accounts accessed using credentials from a prior breach.",
+    "difficulty": "beginner",
+    "estimated_duration_minutes": 15,
+    "xp_completion_bonus": 25,
+    "xp_perfect_score_bonus": 35,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.583Z",
+    "updated_at": "2026-07-24T18:32:29.583Z"
+  }
+},
+{
+  "model": "scenarios.scenario",
+  "pk": 30,
+  "fields": {
+    "scenario_id": "S-APT-05",
+    "category": 6,
+    "title": "Living-off-the-Land Attack Using WMI and PowerShell",
+    "slug": "living-off-the-land-attack-using-wmi-and-powershell",
+    "student_role": "EDR Specialist at FortiShield Managed Security",
+    "overview": "Attacker uses WMI, PowerShell, and certutil to avoid detection — no malware binaries on disk.",
+    "difficulty": "advanced",
+    "estimated_duration_minutes": 35,
+    "xp_completion_bonus": 45,
+    "xp_perfect_score_bonus": 55,
+    "version": 1,
+    "is_active": true,
+    "created_at": "2026-07-24T18:32:29.585Z",
+    "updated_at": "2026-07-24T18:32:29.585Z"
+  }
+},
+{
+  "model": "scenarios.learningobjective",
+  "pk": 1,
+  "fields": {
+    "scenario": 1,
+    "objective_text": "Identify key indicators of a ransomware infection and distinguish them from other malware types.",
+    "order": 1
+  }
+},
+{
+  "model": "scenarios.learningobjective",
+  "pk": 2,
+  "fields": {
+    "scenario": 1,
+    "objective_text": "Apply NIST SP 800-61 containment procedures to stop lateral spread of an active ransomware outbreak.",
+    "order": 2
+  }
+},
+{
+  "model": "scenarios.learningobjective",
+  "pk": 3,
+  "fields": {
+    "scenario": 1,
+    "objective_text": "Evaluate recovery options — paying ransom vs. restoring from backup — and articulate the security implications of each.",
+    "order": 3
+  }
+},
+{
+  "model": "scenarios.scenariostep",
+  "pk": 1,
+  "fields": {
+    "scenario": 1,
+    "step_number": 1,
+    "title": "Monday Morning Alert",
+    "situation_text": "It is 08:47 on a Monday. You arrive at the Security Operations Centre at Nexus Financial Services. Before you can pour your coffee, alerts begin firing on the SIEM dashboard.\n\nCRITICAL — Multiple workstations in the Finance department (VLAN 10) have triggered endpoint protection alerts. A quick call to the Help Desk confirms: employees cannot open files, and a text file called \"HOW_TO_DECRYPT.txt\" has appeared on desktops.\n\nThe CISO has been notified. You are the first analyst on-scene. Your first task is to establish the scope of the incident before taking any action.",
+    "nist_phase": "preparation",
+    "step_type": "info",
+    "is_final_step": false,
+    "is_active": true
+  }
+},
+{
+  "model": "scenarios.scenariostep",
+  "pk": 2,
+  "fields": {
+    "scenario": 1,
+    "step_number": 2,
+    "title": "Initial Containment Decision",
+    "situation_text": "The SIEM shows 14 workstations in Finance VLAN 10 have been encrypted. Encryption appears to have started at 03:15 this morning — over 5 hours ago.\n\nThe malware has NOT yet appeared on other VLANs (HR, IT, Executive).\n\nThe CFO is calling you directly asking when systems will be restored. A colleague suggests you should immediately restore from backup to get Finance back online.\n\nWhat is your FIRST containment action?",
+    "nist_phase": "containment",
+    "step_type": "decision",
+    "is_final_step": false,
+    "is_active": true
+  }
+},
+{
+  "model": "scenarios.scenariostep",
+  "pk": 3,
+  "fields": {
+    "scenario": 1,
+    "step_number": 3,
+    "title": "Identifying the Attack Vector",
+    "situation_text": "VLAN 10 has been isolated. The ransomware is no longer spreading.\n\nYour manager asks you to identify how the ransomware entered the network. You pull evidence:\n\nEmail logs show a Finance user (alice.white@nexusfinancial.com) received a macro-enabled Excel attachment from an external sender at 03:02 on Sunday night.\n\nVPN logs show a successful authentication at 03:10 from an unfamiliar IP address using alice.white's credentials — before the encryption started.\n\nFile server logs confirm the ransomware binary first appeared at 03:14 on the Finance file share.\n\nBased on this evidence, what was the most likely initial infection vector?",
+    "nist_phase": "detection",
+    "step_type": "decision",
+    "is_final_step": false,
+    "is_active": true
+  }
+},
+{
+  "model": "scenarios.scenariostep",
+  "pk": 4,
+  "fields": {
+    "scenario": 1,
+    "step_number": 4,
+    "title": "Eradication and Recovery Approach",
+    "situation_text": "The attack chain is confirmed:\n\n1. Phishing email -> macro executes -> credentials harvested\n2. Attacker uses stolen VPN credentials to access Finance VLAN\n3. Ransomware binary deployed to the Finance file share at 03:14\n\nVLAN 10 remains isolated. The CISO has authorised eradication and recovery.\n\nYour organisation has clean backups from Friday 23:00 (3 days ago). A colleague suggests contacting the attacker to negotiate a cheaper ransom key.\n\nWhat is the correct eradication and recovery approach?",
+    "nist_phase": "eradication",
+    "step_type": "decision",
+    "is_final_step": false,
+    "is_active": true
+  }
+},
+{
+  "model": "scenarios.scenariostep",
+  "pk": 5,
+  "fields": {
+    "scenario": 1,
+    "step_number": 5,
+    "title": "Post-Incident Review & Lessons Learned",
+    "situation_text": "The incident has been successfully contained, eradicated, and systems are now recovered. All 14 workstations have been reimaged. Finance VLAN has been brought back online.\n\nLESSONS LEARNED\n\nATTACK CHAIN: Phishing email -> Macro execution -> Credential theft -> VPN access -> Ransomware deployment\n\nNIST PHASES COMPLETED:\n- Preparation: Alert triage and initial scope assessment\n- Containment: VLAN isolation to prevent spread\n- Detection & Analysis: Attack vector identification from log evidence\n- Eradication: Full reimage of all affected workstations\n- Recovery: Data restored from Friday backup\n\nREMEDIATION ACTIONS TAKEN:\n- alice.white credentials reset and MFA enforced\n- Macro execution blocked in Microsoft 365 for Finance users\n- Email filtering rules updated to quarantine macro-enabled attachments\n- VPN access restricted to known geo-locations\n- Backup frequency increased to 4-hour intervals\n\nExcellent work, Analyst. You followed the NIST IR framework correctly under pressure. Your containment decision prevented the ransomware from reaching 4 other VLANs.\n\nSimulation complete. Review your decision log below.",
+    "nist_phase": "post_incident",
+    "step_type": "info",
+    "is_final_step": true,
+    "is_active": true
+  }
+},
+{
+  "model": "scenarios.decisionoption",
+  "pk": 1,
+  "fields": {
+    "step": 2,
+    "option_text": "Isolate VLAN 10 immediately by disabling the inter-VLAN routing on the core switch.",
+    "is_correct": true,
+    "xp_awarded": 20,
+    "feedback_text": "Correct. Network isolation is the highest-priority containment action for an active ransomware outbreak. Disabling inter-VLAN routing prevents the malware from spreading to other segments. Restoring from backup before containment would re-infect clean systems from the still-active malware.",
+    "consequence_type": "positive",
+    "next_step": null,
+    "display_order": 1
+  }
+},
+{
+  "model": "scenarios.decisionoption",
+  "pk": 2,
+  "fields": {
+    "step": 2,
+    "option_text": "Begin restoring Finance workstations from last night's backup immediately.",
+    "is_correct": false,
+    "xp_awarded": 0,
+    "feedback_text": "Incorrect. Restoring from backup before the malware is contained will result in immediate re-infection of the restored systems. The ransomware executable is still active in the environment. Containment MUST precede recovery in the NIST IR lifecycle.",
+    "consequence_type": "negative",
+    "next_step": null,
+    "display_order": 2
+  }
+},
+{
+  "model": "scenarios.decisionoption",
+  "pk": 3,
+  "fields": {
+    "step": 2,
+    "option_text": "Pay the ransom to get the decryption key and restore operations quickly.",
+    "is_correct": false,
+    "xp_awarded": 0,
+    "feedback_text": "Incorrect. Paying the ransom is strongly discouraged by CISA and the FBI. There is no guarantee the attacker will provide a working decryption key. Payment also funds criminal operations and marks your organisation as a willing payer.",
+    "consequence_type": "negative",
+    "next_step": null,
+    "display_order": 3
+  }
+},
+{
+  "model": "scenarios.decisionoption",
+  "pk": 4,
+  "fields": {
+    "step": 2,
+    "option_text": "Take forensic images of all affected drives before touching anything.",
+    "is_correct": false,
+    "xp_awarded": 0,
+    "feedback_text": "Partially correct thinking — forensics is important, but not the FIRST action. With active ransomware spreading across a live network, every minute of delay allows more systems to be encrypted. Isolate first, image later.",
+    "consequence_type": "neutral",
+    "next_step": null,
+    "display_order": 4
+  }
+},
+{
+  "model": "scenarios.decisionoption",
+  "pk": 5,
+  "fields": {
+    "step": 3,
+    "option_text": "A malicious macro-enabled Excel attachment delivered via a phishing email to a Finance user.",
+    "is_correct": true,
+    "xp_awarded": 20,
+    "feedback_text": 
