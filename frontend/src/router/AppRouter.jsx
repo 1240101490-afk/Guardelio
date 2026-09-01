@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Loader from '../components/common/Loader';
 
@@ -34,12 +34,12 @@ const NotFoundPage = () => (
     <p className="text-slate-500 mb-8 max-w-md">
       The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
     </p>
-    <a
-      href="/dashboard"
+    <Link
+      to="/dashboard"
       className="px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition font-medium"
     >
       Back to Dashboard
-    </a>
+    </Link>
   </div>
 );
 

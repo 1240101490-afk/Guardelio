@@ -51,7 +51,8 @@ axiosInstance.interceptors.response.use(
           localStorage.removeItem('access_token');
           localStorage.removeItem('refresh_token');
           localStorage.removeItem('user');
-          window.location.href = '/login';
+          const baseUrl = import.meta.env.BASE_URL || '/';
+          window.location.href = `${baseUrl.replace(/\/$/, '')}/login`;
         }
       }
     }
